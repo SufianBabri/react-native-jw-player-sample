@@ -81,6 +81,8 @@ import org.apache.tools.ant.taskdefs.condition.Os
 project.ext.react = [
     enableHermes: true,  // clean and rebuild if changing
 ]
+ext.jwPlayerVersion = '4.0.0'
+ext.exoplayerVersion = '2.14.0'
 
 apply from: "../../node_modules/react-native/react.gradle"
 
@@ -141,6 +143,7 @@ android {
         versionCode 1
         versionName "1.0"
         buildConfigField "boolean", "IS_NEW_ARCHITECTURE_ENABLED", isNewArchitectureEnabled().toString()
+        multiDexEnabled true
 
         if (isNewArchitectureEnabled()) {
             // We configure the CMake build only if you decide to opt-in for the New Architecture.
@@ -159,6 +162,10 @@ android {
                 }
             }
         }
+    }
+    compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
     }
 
     if (isNewArchitectureEnabled()) {
@@ -277,6 +284,10 @@ dependencies {
     } else {
         implementation jscFlavor
     }
+
+    // JWP SDK
+    implementation "com.jwplayer:jwplayer-core:$jwPlayerVersion"
+    implementation "com.jwplayer:jwplayer-common:$jwPlayerVersion"
 }
 
 if (isNewArchitectureEnabled()) {

@@ -73,9 +73,16 @@ PODS:
     - FlipperKit/FlipperKitNetworkPlugin
   - fmt (6.2.1)
   - glog (0.3.5)
+  - google-cast-sdk (4.7.0):
+    - google-cast-sdk/Core (= 4.7.0)
+    - Protobuf (~> 3.13)
+  - google-cast-sdk/Core (4.7.0):
+    - Protobuf (~> 3.13)
   - hermes-engine (0.70.6)
+  - JWPlayerKit (4.6.2)
   - libevent (2.1.12)
   - OpenSSL-Universal (1.1.1100)
+  - Protobuf (3.21.9)
   - RCT-Folly (2021.07.22.00):
     - boost
     - DoubleConversion
@@ -368,6 +375,10 @@ PODS:
     - React-jsi (= 0.70.6)
     - React-logger (= 0.70.6)
     - React-perflogger (= 0.70.6)
+  - RNJWPlayer (0.2.27):
+    - google-cast-sdk (~> 4.7.0)
+    - JWPlayerKit (~> 4.6.2)
+    - React
   - SocketRocket (0.6.0)
   - Yoga (1.14.0)
   - YogaKit (1.18.1):
@@ -401,6 +412,7 @@ DEPENDENCIES:
   - FlipperKit/SKIOSNetworkPlugin (= 0.125.0)
   - glog (from `../node_modules/react-native/third-party-podspecs/glog.podspec`)
   - hermes-engine (from `../node_modules/react-native/sdks/hermes/hermes-engine.podspec`)
+  - JWPlayerKit (>= 4.0.0)
   - libevent (~> 2.1.12)
   - OpenSSL-Universal (= 1.1.1100)
   - RCT-Folly (from `../node_modules/react-native/third-party-podspecs/RCT-Folly.podspec`)
@@ -432,6 +444,7 @@ DEPENDENCIES:
   - React-RCTVibration (from `../node_modules/react-native/Libraries/Vibration`)
   - React-runtimeexecutor (from `../node_modules/react-native/ReactCommon/runtimeexecutor`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
+  - RNJWPlayer (from `../node_modules/react-native-jw-media-player`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
@@ -447,8 +460,11 @@ SPEC REPOS:
     - Flipper-RSocket
     - FlipperKit
     - fmt
+    - google-cast-sdk
+    - JWPlayerKit
     - libevent
     - OpenSSL-Universal
+    - Protobuf
     - SocketRocket
     - YogaKit
 
@@ -519,6 +535,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/runtimeexecutor"
   ReactCommon:
     :path: "../node_modules/react-native/ReactCommon"
+  RNJWPlayer:
+    :path: "../node_modules/react-native-jw-media-player"
   Yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
@@ -539,9 +557,12 @@ SPEC CHECKSUMS:
   FlipperKit: cbdee19bdd4e7f05472a66ce290f1b729ba3cb86
   fmt: ff9d55029c625d3757ed641535fd4a75fedc7ce9
   glog: 04b94705f318337d7ead9e6d17c019bd9b1f6b1b
+  google-cast-sdk: 6731e9a206ce43e0f4433d15598ad8a19f0371d5
   hermes-engine: 2af7b7a59128f250adfd86f15aa1d5a2ecd39995
+  JWPlayerKit: f72f577e907b450f76f0185233eab45db285d21b
   libevent: 4049cae6c81cdb3654a443be001fb9bdceff7913
   OpenSSL-Universal: ebc357f1e6bc71fa463ccb2fe676756aff50e88c
+  Protobuf: 02524ec14183fe08fb259741659e79683788158b
   RCT-Folly: a0f70ad9a0d5932a5206c171e22c30c7c403f71c
   RCTRequired: e1866f61af7049eb3d8e08e8b133abd38bc1ca7a
   RCTTypeSafety: 27c2ac1b00609a432ced1ae701247593f07f901e
@@ -569,10 +590,11 @@ SPEC CHECKSUMS:
   React-RCTVibration: c75ceef7aa60a33b2d5731ebe5800ddde40cefc4
   React-runtimeexecutor: 15437b576139df27635400de0599d9844f1ab817
   ReactCommon: 349be31adeecffc7986a0de875d7fb0dcf4e251c
+  RNJWPlayer: 03309382b613256eb3c45a59a7b21081d234eefd
   SocketRocket: fccef3f9c5cedea1353a9ef6ada904fde10d6608
   Yoga: 99caf8d5ab45e9d637ee6e0174ec16fbbb01bcfc
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-PODFILE CHECKSUM: b50cc3311d38465ec42103c34f2f108199b69750
+PODFILE CHECKSUM: e4dbb8ace45d3dd0f1525fd683cfe9aed54be446
 
 COCOAPODS: 1.11.3

@@ -26,6 +26,8 @@ target 'JwMediaPlayerSample' do
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
 
+  pod 'JWPlayerKit', '>= 4.0.0'
+
   target 'JwMediaPlayerSampleTests' do
     inherit! :complete
     # Pods for testing

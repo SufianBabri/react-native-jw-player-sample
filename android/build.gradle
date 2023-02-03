@@ -47,5 +47,10 @@ allprojects {
         }
         google()
         maven { url 'https://www.jitpack.io' }
+
+        // JW Media Player
+        maven{
+            url 'https://mvn.jwplayer.com/content/repositories/releases/'
+        }
     }
 }
